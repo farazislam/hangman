@@ -1,0 +1,218 @@
+body {
+  background-color: #D3D3D3;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-message {
+  font-size: 2.5rem;
+  height: 200px;
+  width: 800px;
+  text-align: center;
+}
+
+.hangman-container{
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2rem;
+  height: 500px;
+  width: 700px;
+  text-align: center;
+  position:relative;
+}
+
+.invisible {
+  display: none;
+}
+
+.crane {
+  position: relative;
+}
+
+.crane-one, .crane-two, .crane-three, .crane-four, .crane-five {
+  position: absolute;
+  border: 2px solid black;
+  width: 0px;
+}
+
+.crane-one {
+  top: 400px;
+  left: 100px;
+  height: 200px;
+  transform: rotate(90deg);
+}
+
+.crane-two {
+  top: 0px;
+  left: 100px;
+  height: 500px;
+}
+
+.crane-three {
+  top: -250px;
+  left: 350px;
+  height: 500px;
+  transform: rotate(90deg);
+}
+
+.crane-four {
+  top: -20px;
+  left: 155px;
+  height: 150px;
+  transform: rotate(45deg);
+}
+
+.hangman {
+  position: relative;
+  height: 430px;
+  width: 200px;
+  margin-left: 500px;
+}
+
+.hangman-animation {
+  animation: hangmanSwing 6s linear infinite;
+}
+
+@keyframes hangmanSwing {
+  from {
+    transform-origin: 100px 0px;
+    transform: rotate(0deg);
+  }
+
+  40% {
+    transform-origin: 100px 0px;
+    transform: rotate(5deg);
+  }
+
+  60% {
+    transform-origin: 100px 0px;
+    transform: rotate(0deg);
+  }
+
+  80% {
+    transform-origin: 100px 0px;
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform-origin: 100px 0px;
+    transform: rotate(0deg);
+  }
+}
+
+.head {
+  position: absolute;
+  top: 130px;
+  left: 60px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 3px solid black;
+  background-color: white;
+}
+
+.noose {
+  position: absolute;
+  top: 0px;
+  left: 100px;
+  height: 130px;
+  width: 0px;
+  border: 3px solid black;
+}
+
+.torso, .leftarm, .rightarm, .leftleg, .rightleg {
+  position: absolute;
+  border: 3px solid black;
+  height: 100px;
+  width: 0px;
+}
+
+.torso {
+  left: 100px;
+  top: 216px;
+}
+
+.leftarm {
+  left: 100px;
+  top: 218px;
+  transform: rotate(20deg) translateX(-20px);
+}
+
+.rightarm {
+  left: 100px;
+  top: 218px;
+  transform: rotate(-20deg) translateX(20px);
+}
+
+.leftleg {
+  left: 100px;
+  top: 318px;
+  transform: rotate(20deg) translateX(-20px);
+}
+
+.rightleg {
+  left: 100px;
+  top: 318px;
+  transform: rotate(-20deg) translateX(20px);
+}
+
+.word {
+  display: flex;
+  margin-top: 70px;
+  font-size: 2rem;
+  text-transform: uppercase;
+  height: 50px;
+}
+
+.word li {
+  margin-right: 20px;
+  width: 50px;
+  border-bottom: 4px solid black;
+  list-style: none;
+  text-align: center;
+}
+
+.word .hidden {
+  display: none;
+}
+
+.keyboard {
+  margin-top: 30px;
+  width: 600px;
+  height: 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Keyboard button classes */
+.keyboardButton {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.keyboardButton:hover {
+  background-color: skyblue;
+  color: white;
+}
+
+.correct {
+  background-color: green;
+  color: white;
+}
+
+.incorrect {
+  background-color: red;
+  color: white;
+  opacity: 0.4
+}
